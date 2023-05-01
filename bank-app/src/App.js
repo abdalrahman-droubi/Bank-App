@@ -1,24 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Navbar from "./component/header";
+import Footer from "./component/footer";
+import Form from "./component/main";
+// import Welcom from "./component/main";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
+  const initState = {
+    accounts: [
+      {
+        id: 1,
+        customerName: "Israa Othman",
+        accountNumber: "123456",
+        accountType: "Savings",
+      },
+      {
+        id: 2,
+        customerName: "Ahmad Zahran",
+        accountNumber: "987654",
+        accountType: "Student accounts",
+      },
+    ],
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Navbar />
+      <Form />
+      <Footer />
+      {/* <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Navbar />  }>
+            <Route path="/create" element={<Form />} />
+            </Route>
+            
+          
+        </Routes>
+      </BrowserRouter> */}
+    </>
   );
 }
 
